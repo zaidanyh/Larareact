@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom'
 const Notes = () => {
     const [notes, setNotes] = useState(null);
 
-    const fetchNotes = () => {
-        api.getAllData().then(res => {
+    const fetchNotes = async () => {
+        await api.getAllData().then(res => {
             const result = res.data;
             setNotes(result.data)
-            console.log(res);
         });
     }
 
